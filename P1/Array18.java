@@ -62,9 +62,9 @@ public class Array18 {
         }
 
         // Menampilkan hasil
-        System.out.println("================================================================");
+        System.out.println("==========================================================================");
         System.out.println("HASIL KONVERSI NILAI");
-        System.out.println("================================================================");
+        System.out.println("==========================================================================");
         System.out.printf("%-40s%-14s%-14s%-14s\n", "Mata Kuliah", "Nilai", "Huruf", "Nilai Setara");
         for (i = 0; i < matkul.length; i++) {
             System.out.printf("%-40s%-14d%-14s%-14.2f\n", matkul[i], nilai[i], nilaiHuruf[i], nilaiSetara[i]);
