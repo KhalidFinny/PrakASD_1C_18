@@ -34,7 +34,6 @@ public class Tugas218 {
                 default:
                     System.out.println("Menu tidak valid!");
             }
-            break;
 
         }
 
