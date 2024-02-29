@@ -42,6 +42,5 @@ public class buku18 {
 
     void gantiHarga(int hrg) {
         harga = hrg;
-
     }
 }
