@@ -18,5 +18,9 @@ public class bukuMain18 {
         buku18 bk2 = new buku18("Self Reward", "Maheera Ayesha", 160, 29, 59000);
         bk2.terjual(11);
         bk2.tampilInformasi();
+
+        buku18 bkkhalid = new buku18("ford vs ferrari", "carol shelby", 200, 40, 250000);
+        bkkhalid.terjual(20);
+        bkkhalid.tampilInformasi();
     }
 }
