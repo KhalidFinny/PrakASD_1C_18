@@ -15,7 +15,11 @@ public class buku18 {
     }
 
     void terjual(int jml) {
-        stok -= jml;
+        if (stok > 0) {
+            stok = Math.max(stok - jml, 0);
+        } else {
+            System.out.println("Habis");
+        }
 
     }
 
