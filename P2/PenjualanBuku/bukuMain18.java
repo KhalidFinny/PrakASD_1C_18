@@ -3,7 +3,7 @@ package P2.PenjualanBuku;
 public class bukuMain18 {
     public static void main(String[] args) {
 
-        buku18 bk1 = new buku18(null, null, 0, 0, 0);
+        buku18 bk1 = new buku18();
         bk1.judul = "Today ends Tomorrow Comes";
         bk1.pengarang = "Denanda Pratiwi";
         bk1.halaman = 198;
@@ -18,7 +18,5 @@ public class bukuMain18 {
         buku18 bk2 = new buku18("Self Reward", "Maheera Ayesha", 160, 29, 59000);
         bk2.terjual(11);
         bk2.tampilInformasi();
-
     }
-
 }
