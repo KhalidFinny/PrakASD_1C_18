@@ -23,7 +23,7 @@ public class bukuMain18 {
         bk2.harga = 275000;
 
         bk2.tampilInformasi();
-        bk2.terjual(5);
+        bk2.terjual(4);
         bk2.gantiHarga(60000);
         bk2.tampilInformasi();
 
