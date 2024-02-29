@@ -4,6 +4,7 @@ public class buku18 {
 
     String judul, pengarang;
     int halaman, stok, harga;
+    int jmlTerjual = 0;
 
     public buku18() {
 
@@ -15,6 +16,7 @@ public class buku18 {
         halaman = hal;
         this.stok = stok;
         harga = har;
+
     }
 
     void tampilInformasi() {
@@ -23,16 +25,20 @@ public class buku18 {
         System.out.println("Halaman: " + halaman);
         System.out.println("Stok: " + stok);
         System.out.println("Harga: " + harga);
+        hitungHargaTotal();
+        int diskon = hitungDiskon();
+        int hargaBayar = hitungHargaBayar() - diskon;
+        System.out.println("Harga bayar: " + hargaBayar);
 
     }
 
     void terjual(int jml) {
         if (stok > 0) {
             stok = Math.max(stok - jml, 0);
+            jmlTerjual = jml;
         } else {
             System.out.println("Habis");
         }
-
     }
 
     void restock(int jml) {
@@ -43,4 +49,27 @@ public class buku18 {
     void gantiHarga(int hrg) {
         harga = hrg;
     }
+
+    int hitungHargaTotal() {
+        int hargaTotal = 0;
+        hargaTotal = jmlTerjual * harga;
+        return hargaTotal;
+    }
+
+    int hitungDiskon() {
+        int hargaTotal = hitungHargaTotal();
+        int diskon = 0;
+        if (hargaTotal > 150000) {
+            diskon = (int) (hargaTotal * 0.12);
+        } else if (hargaTotal > 75000) {
+            diskon = (int) (hargaTotal * 0.05);
+        }
+        return diskon;
+    }
+
+    int hitungHargaBayar() {
+        int hargaTotal = hitungHargaTotal();
+        return hargaTotal;
+    }
+
 }
