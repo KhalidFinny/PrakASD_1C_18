@@ -18,7 +18,9 @@ public class Balok18 {
 
     }
 
-    public Balok18(int t) {
+    public Balok18(int t, int p) {
+        panjang = p;
+        lebar = p;
         tinggi = t;
 
     }
