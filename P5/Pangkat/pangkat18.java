@@ -2,6 +2,10 @@ package P5.Pangkat;
 
 public class pangkat18 {
     public int nilai, pangkat;
+    public pangkat18(int nilai, int pangkat){
+        this.nilai = nilai;
+        this.pangkat = pangkat;
+    }
 
     int pangkatBF(int a, int n) {
         int hasil = 1;

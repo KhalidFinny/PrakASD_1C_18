@@ -10,7 +10,7 @@ public class mainpangkat18 {
         int element = sc18.nextInt();
         pangkat18[] power = new pangkat18[element];
         for (int i = 0; i < element; i++) {
-            power[i] = new pangkat18();
+            power[i] = new pangkat18(0, 0);
             System.out.print("Masukkan nilai yang akan dipangkatkan: ");
             power[i].nilai = sc18.nextInt();
             System.out.print("Masukkan pangkat: ");
