@@ -30,18 +30,30 @@ public class daftarbuku18 {
 //
 //        }
 //    }
-    void selectionsort(){
-        for (int i = 0; i < listbk.length - 1; i++) {
-            int idxmax = i;
-            for (int j = i + 1; j < listbk.length; j++) {
-                if (listbk[j].stok > listbk[idxmax].stok){
-                    idxmax = j;
-                }
-
+//    void selectionsort(){
+//        for (int i = 0; i < listbk.length - 1; i++) {
+//            int idxmax = i;
+//            for (int j = i + 1; j < listbk.length; j++) {
+//                if (listbk[j].stok > listbk[idxmax].stok){
+//                    idxmax = j;
+//                }
+//
+//            }
+//            buku18 tempbuku = listbk[idxmax];
+//            listbk[idxmax] = listbk[i];
+//            listbk[i] = tempbuku;
+//
+//        }
+//    }
+    void insertionsort(){
+        for (int i = 1; i < listbk.length ; i++) {
+            buku18 temp =  listbk[i];
+            int j = i;
+            while (j > 0 && listbk[j - 1].stok > temp.stok){
+                listbk[j] = listbk[j - 1];
+                j--;
             }
-            buku18 tempbuku = listbk[idxmax];
-            listbk[idxmax] = listbk[i];
-            listbk[i] = tempbuku;
+            listbk[j] =temp;
 
         }
     }
