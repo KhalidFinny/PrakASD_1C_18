@@ -22,8 +22,10 @@ public class bukumain18 {
         listbk.tampil();
 
         System.out.println("================");
-        System.out.println("Data setelah diurutkan secara Ascending berdasarkan stok");
-        listbk.bubblesort();
+//        System.out.println("Data setelah diurutkan secara Ascending berdasarkan stok");
+//        listbk.bubblesort();
+        System.out.println("Data setelah diurutkan secara Desc menggunakan selection sort");
+        listbk.selectionsort();
         listbk.tampil();
 
     }

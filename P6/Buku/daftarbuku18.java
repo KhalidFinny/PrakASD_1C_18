@@ -16,17 +16,32 @@ public class daftarbuku18 {
             m.tampildatabuku();
         }
     }
-    void bubblesort(){
+//    void bubblesort(){
+//        for (int i = 0; i < listbk.length - 1; i++) {
+//            for (int j = 0; j < listbk.length- i - 1; j++) {
+//                if (listbk[j].stok > listbk[j+1].stok){
+//                    buku18 tempbk = listbk[j];
+//                    listbk[j] = listbk[j+1];
+//                    listbk[j+1] = tempbk;
+//
+//                }
+//
+//            }
+//
+//        }
+//    }
+    void selectionsort(){
         for (int i = 0; i < listbk.length - 1; i++) {
-            for (int j = 0; j < listbk.length- i - 1; j++) {
-                if (listbk[j].stok > listbk[j+1].stok){
-                    buku18 tempbk = listbk[j];
-                    listbk[j] = listbk[j+1];
-                    listbk[j+1] = tempbk;
-
+            int idxmax = i;
+            for (int j = i + 1; j < listbk.length; j++) {
+                if (listbk[j].stok > listbk[idxmax].stok){
+                    idxmax = j;
                 }
 
             }
+            buku18 tempbuku = listbk[idxmax];
+            listbk[idxmax] = listbk[i];
+            listbk[i] = tempbuku;
 
         }
     }
