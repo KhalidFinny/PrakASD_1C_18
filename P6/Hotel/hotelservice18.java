@@ -36,7 +36,7 @@ void selectionsort() {
     for (int i = 0; i < listhotel.length - 1; i++) {
         int idxmax = i;
         for (int j = i + 1; j < listhotel.length; j++) {
-            if (listhotel[j].harga < listhotel[idxmax].harga) {
+            if (listhotel[j].harga > listhotel[idxmax].harga) {
                 idxmax = j;
             }
 

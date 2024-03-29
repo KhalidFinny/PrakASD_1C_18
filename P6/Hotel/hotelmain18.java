@@ -22,7 +22,7 @@ public class hotelmain18 {
         listhotel.tampil();
 
         System.out.println("================================================================");
-        System.out.println("List hotel setelah disorting secara asc harga dengan selection sort");
+        System.out.println("List hotel setelah disorting secara desc bintang dengan selection sort");
 //        listhotel.bubblesort();
         listhotel.selectionsort();
         listhotel.tampil();
