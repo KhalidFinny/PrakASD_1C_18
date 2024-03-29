@@ -19,20 +19,32 @@ public class hotelservice18 {
             h.tampilhotel();
         }
     }
-    void bubblesort(){
-        for (int i = 0; i < listhotel.length - 1; i++) {
-            for (int j = 0; j < listhotel.length- i - 1; j++) {
-                if (listhotel[j].bintang < listhotel[j+1].bintang){
-                    hotel18 temphotel = listhotel[j];
-                    listhotel[j] = listhotel[j+1];
-                    listhotel[j+1] = temphotel;
-
-                }
-
+//    void bubblesort(){
+//        for (int i = 0; i < listhotel.length - 1; i++) {
+//            for (int j = 0; j < listhotel.length- i - 1; j++) {
+//                if (listhotel[j].bintang < listhotel[j+1].bintang){
+//                    hotel18 temphotel = listhotel[j];
+//                    listhotel[j] = listhotel[j+1];
+//                    listhotel[j+1] = temphotel;
+//
+//                }
+//
+//            }
+//
+//        }
+void selectionsort() {
+    for (int i = 0; i < listhotel.length - 1; i++) {
+        int idxmax = i;
+        for (int j = i + 1; j < listhotel.length; j++) {
+            if (listhotel[j].harga < listhotel[idxmax].harga) {
+                idxmax = j;
             }
 
         }
+        hotel18 temphotel = listhotel[idxmax];
+        listhotel[idxmax] = listhotel[i];
+        listhotel[i] = temphotel;
+
+    }
 }
-
-
 }
