@@ -49,7 +49,7 @@ public class daftarbuku18 {
         for (int i = 1; i < listbk.length ; i++) {
             buku18 temp =  listbk[i];
             int j = i;
-            while (j > 0 && listbk[j - 1].stok > temp.stok){
+            while (j > 0 && listbk[j - 1].stok < temp.stok){
                 listbk[j] = listbk[j - 1];
                 j--;
             }
