@@ -12,7 +12,7 @@ public class hotel18 {
         this.bintang = bintang;
         this.rooms = rooms;
     }
-    public void tampildatabuku(){
+    public void tampilhotel(){
         System.out.println("======================");
         System.out.println("Nama hotel: " + nama);
         System.out.println("Kota : " + kota);

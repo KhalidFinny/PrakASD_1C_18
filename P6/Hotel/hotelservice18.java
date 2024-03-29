@@ -16,7 +16,7 @@ public class hotelservice18 {
     }
     void tampil(){
         for (hotel18 h : listhotel){
-            h.tampildatabuku();
+            h.tampilhotel();
         }
     }
     void bubblesort(){
