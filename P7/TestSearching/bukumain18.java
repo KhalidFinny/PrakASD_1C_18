@@ -28,9 +28,11 @@ public class bukumain18 {
         System.out.print("Masukkan kode buku yang dicari: ");
         int cari = ami18.nextInt();
         System.out.println("Menggunakan sequential search ");
-        int posisi = data.seqsearch(cari);
-        data.tampilposisi(cari, posisi);
-        data.data(cari, posisi);
+//        int posisi = data.seqsearch(cari);
+//        data.tampilposisi(cari, posisi);
+//        data.data(cari, posisi);
+        buku18 databuku = data.findBuku(cari);
+        databuku.tampildata();
 
     }
 
