@@ -69,7 +69,7 @@ public int binary(int cari, int left, int right) {
             return mid;
         }
 
-        if (listbk[mid].kodebuku > cari) {
+        if (listbk[mid].kodebuku < cari) {
             return binary(cari, left, mid - 1);
         } else {
             return binary(cari, mid + 1, right);

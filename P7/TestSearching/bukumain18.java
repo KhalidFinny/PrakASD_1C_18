@@ -8,11 +8,11 @@ public class bukumain18 {
         int buku = 5;
 
         pencarianbuku18 data = new pencarianbuku18();
-        buku18 m = new buku18(111, "Algoritma", 2019, "Wahyuni", 5);
-        buku18 m1 = new buku18(123, "Big Data", 2020, "Susilo", 3);
-        buku18 m2 = new buku18(125, "Desain UI", 2021, "Supriadi", 3);
-        buku18 m3 = new buku18(126, "Web Programming", 2022, "Pustaka Adi", 2);
-        buku18 m4 = new buku18(127, "Etika Mahasiswa", 2023, "Darmawan Adi", 2);
+        buku18 m = new buku18(20215, "Algoritma", 2019, "Wahyuni", 5);
+        buku18 m1 = new buku18(20214, "Big Data", 2020, "Susilo", 3);
+        buku18 m2 = new buku18(20212, "Desain UI", 2021, "Supriadi", 3);
+        buku18 m3 = new buku18(20211, "Web Programming", 2022, "Pustaka Adi", 2);
+        buku18 m4 = new buku18(20210, "Etika Mahasiswa", 2023, "Darmawan Adi", 2);
 
         data.tambah(m);
         data.tambah(m1);
