@@ -1,17 +1,15 @@
 package P7.TestSearching;
 
-import P6.Hotel.hotel18;
-
 public class pencarianbuku18 {
     buku18 listbk[] = new buku18[5];
-    int idx;
+    int jumlahBuku;
 
-    void tambah(buku18 m) {
-        if (idx < listbk.length) {
-            listbk[idx] = m;
-            idx++;
+    public void tambah(buku18 data) {
+        if (jumlahBuku < listbk.length) {
+            listbk[jumlahBuku] = data;
+            jumlahBuku++;
         } else {
-            System.out.println("Data sudah penuh");
+            System.out.println("Array sudah penuh");
         }
     }
 
@@ -20,81 +18,75 @@ public class pencarianbuku18 {
             m.tampildata();
         }
     }
-//    public int seqsearch(int cari) {
-//        int posisi = -1;
-//        for (int i = 0; i < listbk.length; i++) {
-//            if (listbk[i].kodebuku == cari) {
-//                posisi = i;
-//                break;
-//            }
-//        }
-//        return posisi;
-//    }
 
-        public void tampilposisi(int x, int pos) {
-        if (pos != -1) {
-            System.out.println("data: " + x + " ditemukan pada indeks " + pos);
-
-        } else {
-            System.out.println("data: " + x + " tidak ditemukan");
+    public void seqsearch(String cari) {
+        String hasil = "buku tidak ditemukan";
+        for (int i = 0; i < listbk.length; i++) {
+            if (listbk[i].judulbuku.equalsIgnoreCase(cari)) {
+                break;
+            }
         }
     }
-    public void data(int x, int pos){
 
-        if (pos != -1) {
+    public void data(String cari, String pos) {
+        if (!pos.equals("Judul buku tidak ditemukan.")) {
+            int posisi = Integer.parseInt(pos.split(": ")[1]);
             System.out.println("================================");
-            System.out.println("Kode buku: " + x);
-            System.out.println("Judul buku: " + listbk[pos].judulbuku);
-            System.out.println("Tahun terbit: " + listbk[pos].tahunterbit);
-            System.out.println("Nama pengarang: " + listbk[pos].pengarang);
-            System.out.println("Sisa stock: " + listbk[pos].stock);
+            System.out.println("Kode buku: " + listbk[posisi].kodebuku);
+            System.out.println("Judul buku: " + listbk[posisi].judulbuku);
+            System.out.println("Tahun terbit: " + listbk[posisi].tahunterbit);
+            System.out.println("Nama pengarang: " + listbk[posisi].pengarang);
+            System.out.println("Sisa stock: " + listbk[posisi].stock);
         } else {
-            System.out.println("data: " + x + " tidak ditemukan");
-        }
-    }
-//    public buku18 findBuku(int cari) {
-//        for (int i = 0; i < listbk.length; i++) {
-//            if (listbk[i].kodebuku == cari) {
-//                return listbk[i];
-//            }
-//
-//        }
-//        return null;
-//    }
-public int binary(int cari, int left, int right) {
-    if (right >= left) {
-        int mid = left + (right - left) / 2;
-
-        if (listbk[mid].kodebuku == cari) {
-            return mid;
-        }
-
-        if (listbk[mid].kodebuku < cari) {
-            return binary(cari, left, mid - 1);
-        } else {
-            return binary(cari, mid + 1, right);
+            System.out.println(pos);
         }
     }
 
-    // Element not found
-    return -1;
-}
+    public String binarystring(String cari, int left, int right) {
+        if (right >= left) {
+            int mid = left + (right - left) / 2;
+            int comparison = listbk[mid].judulbuku.compareTo(cari);
+            if (comparison == 0) {
+                return "Posisi: " + mid;
+            }
+            if (comparison < 0) {
+                return binarystring(cari, mid + 1, right);
+            } else {
+                return binarystring(cari, left, mid - 1);
+            }
+        }
+        return "Judul buku tidak ditemukan.";
+    }
 
+    public void tampilposisi(String cari, String pos) {
+        System.out.println(pos);
+    }
+
+    public buku18 findBuku(String cari) {
+        for (int i = 0; i < listbk.length; i++) {
+            if (listbk[i].judulbuku.equalsIgnoreCase(cari)) {
+                return listbk[i];
+            }
+
+        }
+        return null;
+    }
 
 //    public void selectionsort() {
 //        for (int i = 0; i < listbk.length - 1; i++) {
-//            int idxmax = i;
+//            String minjudul = listbk[i].judulbuku;
+//            int idx = i;
 //            for (int j = i + 1; j < listbk.length; j++) {
-//                if (listbk[j].kodebuku > listbk[idxmax].kodebuku) {
-//                    idxmax = j;
+//                if (listbk[j].judulbuku.compareTo(minjudul) < 0) {
+//                    minjudul = listbk[j].judulbuku;
+//                    idx = j;
 //                }
-//
 //            }
-//            buku18 tempbuku = listbk[idxmax];
-//            listbk[idxmax] = listbk[i];
-//            listbk[i] = tempbuku;
-//
+//            if (idx != i) {
+//                buku18 temp = listbk[i];
+//                listbk[i] = listbk[idx];
+//                listbk[idx] = temp;
+//            }
 //        }
 //    }
-
 }
