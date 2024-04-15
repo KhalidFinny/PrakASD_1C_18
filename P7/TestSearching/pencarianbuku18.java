@@ -89,4 +89,20 @@ public class pencarianbuku18 {
             }
         }
     }
+
+    public int bukulebihdari1(String buku) {
+        int judul = 0;
+
+
+        for (int i = 0; i < listbk.length; i++) {
+            if (listbk[i].judulbuku.equalsIgnoreCase(buku)) {
+                judul++;
+            }
+        }
+        if (judul > 1) {
+            System.out.println("Peringatan: Lebih dari satu hasil ditemukan untuk judul buku '" + buku + "'.");
+        }
+        return judul;
+    }
+
 }
