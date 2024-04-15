@@ -17,8 +17,8 @@ public class bukumain18 {
         buku18 m4 = new buku18(127, "Etika_Mahasiswa", 2023, "Darmawan Adi", 2);
 
         data.tambah(m);
-        data.tambah(m1);
         data.tambah(m2);
+        data.tambah(m1);
         data.tambah(m4);
         data.tambah(m3);
 
@@ -31,6 +31,7 @@ public class bukumain18 {
         System.out.print("Masukkan Judul buku yang dicari: ");
         String cari = ami18.next();
 
+        data.selectionsort();
         System.out.println("Menggunakan sequential search ");
         data.seqsearch(cari);
         buku18 databuku = data.findBuku(cari);

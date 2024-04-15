@@ -72,21 +72,21 @@ public class pencarianbuku18 {
         return null;
     }
 
-//    public void selectionsort() {
-//        for (int i = 0; i < listbk.length - 1; i++) {
-//            String minjudul = listbk[i].judulbuku;
-//            int idx = i;
-//            for (int j = i + 1; j < listbk.length; j++) {
-//                if (listbk[j].judulbuku.compareTo(minjudul) < 0) {
-//                    minjudul = listbk[j].judulbuku;
-//                    idx = j;
-//                }
-//            }
-//            if (idx != i) {
-//                buku18 temp = listbk[i];
-//                listbk[i] = listbk[idx];
-//                listbk[idx] = temp;
-//            }
-//        }
-//    }
+    public void selectionsort() {
+        for (int i = 0; i < listbk.length - 1; i++) {
+            String minjudul = listbk[i].judulbuku;
+            int idx = i;
+            for (int j = i + 1; j < listbk.length; j++) {
+                if (listbk[j].judulbuku.compareTo(minjudul) < 0) {
+                    minjudul = listbk[j].judulbuku;
+                    idx = j;
+                }
+            }
+            if (idx != i) {
+                buku18 temp = listbk[i];
+                listbk[i] = listbk[idx];
+                listbk[idx] = temp;
+            }
+        }
+    }
 }
