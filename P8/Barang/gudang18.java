@@ -25,13 +25,19 @@ public class gudang18 {
         }
     }
     public void tambahbarang(barang18 brg) {
-        if (!cekpenuh()) {
+        if (!cekkosong()) {
             top++;
-            tumpukan[top] = brg;
-            System.out.println("Barang " + brg.nama + " berhasil ditambahkan ke gedung");
+            if (top < size) {
+                tumpukan[top] = brg;
+                System.out.println("Barang " + brg.nama + " berhasil ditambahkan ke gudang");
+            } else {
+                System.out.println("Gagal! Tumpukan barang di gudang sudah penuh");
+                top--;
+            }
         } else {
-            System.out.println("Gagal! tumpukan barang digudang sudah penuh");
-
+            top = 0;
+            tumpukan[top] = brg;
+            System.out.println("Barang " + brg.nama + " berhasil ditambahkan ke gudang");
         }
     }
     public barang18 ambilbarang(){
@@ -79,6 +85,25 @@ public class gudang18 {
             biner += stack.pop();
         }
         return biner;
+    }
+    public barang18 barangbawah() {
+        if (top != -1) {
+            barang18 barangbawah = tumpukan[0];
+            System.out.println("Barang terbawah: " + barangbawah.nama);
+            return barangbawah;
+        } else {
+            System.out.println("Tumpukan barang kosong");
+            return null;
+        }
+    }
+
+    public boolean caribarang(int kode) {
+        for (int i = 0; i <= top; i++) {
+            if (tumpukan[i].kode == kode) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
