@@ -57,7 +57,7 @@ public class Postfix18 {
                 while (stack[top] != '(') {
                     p = p + pop();
                 }
-                pop(); // Menghapus '(' dari stack
+                pop();
             } else if (isoperator(c)) {
                 while (top != -1 && derajat(stack[top]) >= derajat(c)) {
                     p = p + pop();
@@ -65,7 +65,6 @@ public class Postfix18 {
                 push(c);
             }
         }
-        // Mengosongkan stack
         while (top != -1) {
             p = p + pop();
         }
