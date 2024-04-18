@@ -30,7 +30,6 @@ public class utama18 {
                     barang18 barangbaru = new barang18(kode, nama, kategori);
                     gudang.tambahbarang(barangbaru);
                     break;
-
                 case 2:
                     gudang.ambilbarang();
                     break;

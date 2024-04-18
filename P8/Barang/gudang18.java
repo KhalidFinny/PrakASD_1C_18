@@ -31,6 +31,7 @@ public class gudang18 {
             System.out.println("Barang " + brg.nama + " berhasil ditambahkan ke gedung");
         } else {
             System.out.println("Gagal! tumpukan barang digudang sudah penuh");
+
         }
     }
     public barang18 ambilbarang(){
