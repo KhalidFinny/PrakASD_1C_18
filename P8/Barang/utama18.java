@@ -5,15 +5,18 @@ import java.util.Scanner;
 public class utama18 {
     public static void main(String[] args) {
         Scanner finny18 = new Scanner(System.in);
-        gudang18 gudang = new gudang18(7);
-
+        System.out.print("Masukkan kapisitas gudang: ");
+        int kapasitas = finny18.nextInt();
+        finny18.nextLine();
+        gudang18 gudang = new gudang18(kapasitas);
 
         while (true){
             System.out.println("\nMenu: ");
             System.out.println("1. Tambah barang");
             System.out.println("2. Ambil barang");
             System.out.println("3. Tampilkan tumpukan barang");
-            System.out.println("4. Keluar");
+            System.out.println("4. Tampilkan barang teratas");
+            System.out.println("5. Keluar");
             System.out.print("Pilih operasi: ");
             int pilihan = finny18.nextInt();
             finny18.nextLine();
@@ -37,6 +40,9 @@ public class utama18 {
                     gudang.tampilkanbarang();
                     break;
                 case 4:
+                    gudang.lihatbarangteratas();
+                    break;
+                case 5:
                     break;
                 default:
                     System.out.println("Pilihan tidak valid. Silahkan coba lagi");
