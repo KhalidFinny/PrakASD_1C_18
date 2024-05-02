@@ -58,7 +58,8 @@ public class queue18 {
     }
     public void enqueue(int dt) {
         if (isfull()){
-            throw new IllegalStateException("Queue sudah penuh");
+            System.out.println("Queue sudah penuh");
+            System.exit(0);
         } else {
             if (isempty()) {
                 front = rear = 0;
@@ -76,7 +77,8 @@ public class queue18 {
     public int dequeue() {
         int dt = 0;
         if (isempty()){
-            throw new IllegalStateException("Queue masih kosong");
+            System.out.println("Queue masih kosong");
+            System.exit(0);
         } else {
             dt = data[front];
             size--;
