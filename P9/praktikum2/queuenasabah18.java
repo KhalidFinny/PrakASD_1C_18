@@ -1,17 +1,15 @@
-package P9.praktikum1;
+package P9.praktikum2;
 
-import P9.praktikum2.nasabah18;
-
-public class queue18 {
-    int[] data;
+public class queuenasabah18 {
+    nasabah18[] data;
     int front;
     int rear;
     int size;
     int max;
 
-    public queue18(int n) {
+    public queuenasabah18(int n) {
         max = n;
-        data = new int[max];
+        data = new nasabah18[max];
         size = 0;
         front = rear = -1;
     }
@@ -31,7 +29,8 @@ public class queue18 {
     }
     public void peek() {
         if (!isempty()){
-            System.out.println("Elemen terdepan adalah: " + data[front]);
+            System.out.println("Elemen terdepan adalah: " + data[front].norek + ""+ data[front].nama
+            + " " + data[front].alamat+ " " + data[front].umur + " " + data[front].saldo);
         } else {
             System.out.println("Queue masih kosong");
         }
@@ -42,10 +41,12 @@ public class queue18 {
         } else {
             int i = front;
             while (i != rear){
-                System.out.println(data[i] + " ");
+                System.out.println(data[i].norek + " " + data[i].nama
+                + " " + data[i].alamat + " " + data[i].umur + " " +data[i].saldo);
                 i= (i + 1) % max;
             }
-            System.out.println(data[i] + " ");
+            System.out.println(data[i].norek + " " + data[i].nama
+                    + " " + data[i].alamat + " " + data[i].umur + " " +data[i].saldo );
             System.out.println("Jumlah elemen = " + size);
         }
     }
@@ -58,7 +59,7 @@ public class queue18 {
             System.out.println("Queue masih kosong");
         }
     }
-    public void enqueue(int dt) {
+    public void enqueue(nasabah18 dt) {
         if (isfull()){
             System.out.println("Queue sudah penuh");
             System.exit(0);
@@ -76,8 +77,8 @@ public class queue18 {
             size++;
         }
     }
-    public int dequeue() {
-        int dt = 0;
+    public nasabah18 dequeue() {
+        nasabah18 dt = new nasabah18();
         if (isempty()){
             System.out.println("Queue masih kosong");
             System.exit(0);
@@ -96,6 +97,5 @@ public class queue18 {
         }
         return dt;
     }
-
 
 }
