@@ -97,5 +97,14 @@ public class queuenasabah18 {
         }
         return dt;
     }
+    public void peekrear() {
+        if (!isempty()) {
+            System.out.println("Antrian paling belakang adalah: " + data[rear].norek + " " + data[rear].nama
+                    + " " + data[rear].alamat + " " + data[rear].umur + " " + data[rear].saldo);
+        } else {
+            System.out.println("Queue masih kosong");
+        }
+    }
+
 
 }

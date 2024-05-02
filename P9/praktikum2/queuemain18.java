@@ -43,6 +43,11 @@ public class queuemain18 {
                 case 4:
                     antri.print();
                     break;
+                case 5:
+                    System.out.println("Antrian paling belakang: ");
+                    antri.peekrear();
+                    break;
+
             }
         } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih == 5);
     }
@@ -52,6 +57,7 @@ public class queuemain18 {
         System.out.println("2. Antrian keluar");
         System.out.println("3. Antrian terdepan");
         System.out.println("4. Cek antrian");
+        System.out.println("5. Cek antrian paling belakang");
         System.out.println("-------------------------------");
 
     }
