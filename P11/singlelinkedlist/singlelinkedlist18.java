@@ -61,21 +61,104 @@ public class singlelinkedlist18 {
     void insertAt(int index, int input) {
         if (index == 0) {
             addfirst(input);
+        } else {
+            node18 temp = head;
+            for (int i = 0; i < index - 1 && temp != null; i++) {
+                temp = temp.next;
+            }
+            if (temp != null) {
+                node18 ndinput = new node18(input, temp.next);
+                temp.next = ndinput;
+                if (ndinput.next == null) {
+                    tail = ndinput;
+                }
+                if (temp.next.next == null) {
+                    tail = temp.next;
+                }
+            }
+        }
+    }
+
+    int getdata(int index) {
+        node18 tmp = head;
+        for (int i = 0; i < index + 1; i++) {
+            tmp = tmp.next;
+        }
+        return tmp.next.data;
+    }
+
+    int indexof(int key) {
+        node18 tmp = head;
+        int index = 0;
+        while (tmp != null && tmp.data != key) {
+            tmp = tmp.next;
+            index++;
+        }
+        if (tmp != null) {
+            return 1;
+        } else {
+            return index;
+        }
+    }
+
+    void removefirst() {
+        if (head == null) {
+            System.out.println("Linked list masih kosong, tidak dapat dihapus");
+        } else if (head == tail) {
+            head = tail = null;
+        } else {
+            head = head.next;
+        }
+    }
+    void removelast() {
+        if (head == null) {
+            System.out.println("Linked list masih kosong, tidak dapat dihapus");
+        } else if (head == tail) {
+            head = tail = null;
+        } else {
+            node18 temp = head;
+            while (temp.next != null && temp.next == tail) {
+                temp = temp.next;
+            }
+            tail = temp;
+            tail.next = null;
+        }
+    }
+    void remove(int key) {
+        if (head == null) {
+            System.out.println("Linked list masih kosong, tidak dapat dihapus");
+        } else {
+            if (head.data == key) {
+                removefirst();
             } else {
                 node18 temp = head;
-                for (int i = 0; i < index - 1 && temp != null; i++) {
+                while (temp.next != null && temp.next.data != key) {
                     temp = temp.next;
                 }
-                if (temp != null) {
-                    node18 ndinput = new node18(input, temp.next);
-                    temp.next = ndinput;
-                    if (ndinput.next == null) {
-                        tail = ndinput;
-                    }
-                    if (temp.next.next == null) {
-                        tail = temp.next;
+                if (temp.next != null) {
+                    temp.next = temp.next.next;
+                    if (temp.next == null) {
+                        tail = temp;
                     }
                 }
             }
+        }
+    }
+
+    public void removeat(int index) {
+        if (index == 0) {
+            removefirst();
+        } else {
+            node18 temp = head;
+            for (int i = 0; i < index - 1 && temp != null; i++) {
+                temp = temp.next;
+            }
+            if (temp != null && temp.next != null) {
+                temp.next = temp.next.next;
+                if (temp.next == null) {
+                    tail = temp;
+                }
+            }
+        }
     }
 }
