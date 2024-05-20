@@ -138,4 +138,30 @@ public class doublelinkedlist18 {
             size--;
         }
     }
+    public int getfirst() throws Exception {
+        if (isempty()) {
+            throw new Exception("Linked list kosong");
+        }
+        return head.data;
+    }
+    public int getlast() throws Exception {
+        if (isempty()) {
+            throw new Exception("Linked list kosong");
+        }
+        node18 tmp = head;
+        while (tmp.next != null) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
+    public int get(int index) throws Exception {
+        if (isempty() || index >= size) {
+            throw new Exception("Nilai indeks diluar batas");
+        }
+        node18 tmp = head;
+        for (int i = 0; i < index; i++) {
+            tmp = tmp.next;
+        }
+        return tmp.data;
+    }
 }
