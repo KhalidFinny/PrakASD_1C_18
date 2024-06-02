@@ -31,5 +31,7 @@ public class binarytreemain18 {
         System.out.println("");
         System.out.println("Min: "+ bt.min());
         System.out.println("Max: "+ bt.max());
+        System.out.println("Leaf: ");
+        bt.leaf();
     }
 }

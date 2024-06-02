@@ -188,5 +188,20 @@ public class binarytree18 {
         }
         return current.data;
     }
+    public void leaf() {
+        daun(root);
+    }
+
+    public void daun(node18 node) {
+        if (node == null) {
+            return;
+        }
+        if (node.left == null && node.right == null) {
+            System.out.print(node.data + " ");
+        }
+        daun(node.left);
+        daun(node.right);
+    }
+
 }
 
