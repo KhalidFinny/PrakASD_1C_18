@@ -151,6 +151,7 @@ public class binarytree18 {
             successor.left = current.left;
         }
     }
+
     public node18 addrecursive(node18 current, int data) {
         if (current == null) {
             return new node18(data);
@@ -166,6 +167,26 @@ public class binarytree18 {
     }
     void addrec(int data) {
         root = addrecursive(root, data);
+    }
+    public int min() {
+        if (!isempty()) {
+            throw new IllegalStateException("Tree is empty");
+        }
+        node18 current = root;
+        while (current.left != null) {
+            current = current.left;
+        }
+        return current.data;
+    }
+    public int max() {
+        if (!isempty()) {
+            throw new IllegalStateException("Tree is empty");
+        }
+        node18 current = root;
+        while (current.right != null) {
+            current = current.right;
+        }
+        return current.data;
     }
 }
 

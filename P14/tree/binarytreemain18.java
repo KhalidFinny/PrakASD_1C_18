@@ -21,6 +21,7 @@ public class binarytreemain18 {
         System.out.print("PostOrder Traversal: ");
         bt.traversepostorder(bt.root);
         System.out.println("");
+        System.out.println("");
         System.out.println("Find Node: " +bt.find(5));
         System.out.println("Delete node 8 ");
         bt.delete(8);
@@ -28,5 +29,7 @@ public class binarytreemain18 {
         System.out.print("PreOrder Traversal: " );
         bt.traversepreorder(bt.root);
         System.out.println("");
+        System.out.println("Min: "+ bt.min());
+        System.out.println("Max: "+ bt.max());
     }
 }
