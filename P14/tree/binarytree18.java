@@ -202,6 +202,20 @@ public class binarytree18 {
         daun(node.left);
         daun(node.right);
     }
+    public int itungdaun() {
+        return daundiitung(root);
+    }
+
+    public int daundiitung(node18 node) {
+        if (node == null) {
+            return 0;
+        }
+        if (node.left == null && node.right == null) {
+            return 1;
+        }
+        return daundiitung(node.left) + daundiitung(node.right);
+    }
+
 
 }
 
