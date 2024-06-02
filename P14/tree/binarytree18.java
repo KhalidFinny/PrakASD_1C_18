@@ -11,32 +11,33 @@ public class binarytree18 {
         return root != null;
     }
 
-    void add(int data) {
-        if (!isempty()) {
-            root = new node18(data);
-        } else {
-            node18 current = root;
-            while (true) {
-                if (data > current.data) {
-                    if (current.right == null) {
-                        current.right = new node18(data);
-                        break;
-                    } else {
-                        current = current.right;
-                    }
-                } else if (data < current.data) {
-                    if (current.left == null) {
-                        current.left = new node18(data);
-                        break;
-                    } else {
-                        current = current.left;
-                    }
-                } else {
-                    break;
-                }
-            }
-        }
-    }
+//    void add(int data) {
+//        if (!isempty()) {
+//            root = new node18(data);
+//        } else {
+//            node18 current = root;
+//            while (true) {
+//                if (data > current.data) {
+//                    if (current.right == null) {
+//                        current.right = new node18(data);
+//                        break;
+//                    } else {
+//                        current = current.right;
+//                    }
+//                } else if (data < current.data) {
+//                    if (current.left == null) {
+//                        current.left = new node18(data);
+//                        break;
+//                    } else {
+//                        current = current.left;
+//                    }
+//                } else {
+//                    break;
+//                }
+//            }
+//        }
+//
+//    }
     boolean find(int data) {
         node18 current = root;
         while (current != null) {
@@ -149,6 +150,22 @@ public class binarytree18 {
             }
             successor.left = current.left;
         }
+    }
+    public node18 addrecursive(node18 current, int data) {
+        if (current == null) {
+            return new node18(data);
+        }
+
+        if (data < current.data) {
+            current.left = addrecursive(current.left, data);
+        } else if (data > current.data) {
+            current.right = addrecursive(current.right, data);
+        }
+
+        return current;
+    }
+    void addrec(int data) {
+        root = addrecursive(root, data);
     }
 }
 
