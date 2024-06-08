@@ -86,4 +86,11 @@ public class graph18 {
         }
         return false;
     }
+    public boolean cekedge(int asal, int tujuan) {
+        try {
+            return berdekatan(asal, tujuan) || berdekatan(tujuan, asal);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
