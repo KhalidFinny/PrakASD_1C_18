@@ -38,7 +38,8 @@ public class graphmain18 {
             System.out.println("3) Degree");
             System.out.println("4) Print Graph");
             System.out.println("5) Cek Edge");
-            System.out.println("6) Keluar");
+            System.out.println("6) Update jarak");
+            System.out.println("7) Exit");
 
             System.out.print("Pilih menu: ");
             pilihan = finny18.nextInt();
@@ -77,11 +78,24 @@ public class graphmain18 {
                     }
                     break;
                 case 6:
+                    System.out.print("Masukkan asal: ");
+                    asal = finny18.nextInt();
+                    System.out.print("Masukkan tujuan: ");
+                    tujuan = finny18.nextInt();
+                    System.out.print("Masukkan jarak baru: ");
+                    int newJarak = finny18.nextInt();
+                    try {
+                        gedung.updatejarak(asal, tujuan, newJarak);
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+                case 7:
                     break;
                 default:
                     System.out.println("Pilihan tidak valid!");
 
             }
-        } while (pilihan != 6);
+        } while (pilihan != 7);
     }
 }

@@ -93,4 +93,15 @@ public class graph18 {
             throw new RuntimeException(e);
         }
     }
+    public void updatejarak(int asal, int tujuan, int update) throws Exception {
+        for (int i = 0; i < list[asal].size; i++) {
+            if (list[asal].get(i) == tujuan) {
+                list[asal].remove(i);
+                list[asal].addfirst(tujuan, update);
+                System.out.println("Jarak antara gedung " + (char) ('A' + asal) + " dan " + (char) ('A' + tujuan) + " berhasil diupdate menjadi " + update + " m.");
+                return;
+            }
+        }
+        throw new Exception("Edge tidak ditemukan.");
+    }
 }
