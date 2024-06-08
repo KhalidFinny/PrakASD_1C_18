@@ -36,5 +36,6 @@ public class graphmain18 {
         System.out.println("Hasil setelah penghapusan edge: ");
         gedung.removeedge(2,1);
         gedung.printgraph();
+        System.out.println("Degree dari node 1 adalah: " +gedung.degree(1));
     }
 }
